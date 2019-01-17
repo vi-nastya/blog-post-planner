@@ -6,7 +6,8 @@ import * as firebase from "firebase";
 
 class App extends Component {
   state = {
-    text: "New post"
+    text: "New post",
+    hasLoadedTextAtLeastOnce: false
   };
 
   handleChange = newText => {
@@ -18,12 +19,14 @@ class App extends Component {
   componentDidMount() {
     const textRef = firebase.database().ref("react/text");
     textRef.on("value", snap => {
-      console.log(snap.val());
-      this.setState({ text: snap.val() });
+      this.setState({ text: snap.val(), hasLoadedTextAtLeastOnce: true });
     });
   }
 
   render() {
+    if (!this.state.hasLoadedTextAtLeastOnce) {
+      return <h1>Loading...</h1>;
+    }
     return (
       <div className="App">
         <div className="container m-1">

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 
 import "./App.css";
-import Post from "./components/post";
-import PostsList from "./components/postList";
+import Post from "./components/Post";
+import PostsList from "./components/PostsList";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

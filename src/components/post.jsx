@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PostText from "./PostText";
+import PostText from "./post-text";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import * as firebase from "firebase";
 
